@@ -4,32 +4,38 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-function preload()
-{
-	
+var hammer;
+var ground;
+var stone;
+
+function preload(){	
 }
 
 function setup() {
 	createCanvas(800, 700);
-
-
 	engine = Engine.create();
 	world = engine.world;
-
+    
+    
 	//Create the Bodies Here.
+    hammer = new Hammer(400,-200,100,40);
+    ground = new Ground(400,700,800,40);
+    stone = new Stone(200,0,80,80);
 
-
-	Engine.run(engine);
-  
+	  Engine.run(engine);
+    
 }
 
-
 function draw() {
-  rectMode(CENTER);
-  background(0);
+//   rectMode(CENTER);
+  background("lightBlue");
+  Engine.update(engine);
+
+  hammer.display();
+  ground.display();
+  stone.display();
   
   drawSprites();
- 
 }
 
 
