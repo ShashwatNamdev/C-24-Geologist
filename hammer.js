@@ -5,9 +5,9 @@ class Hammer{
             'friction':1.0,
             'density':0
         }
-        this.body = Bodies.rectangle(x, y, 100, 40, options);
-        this.width = 100;
-        this.height = 40;
+        this.body = Bodies.rectangle(x, y, width, height, options);
+        this.width = width;
+        this.height = height;
         World.add(world, this.body);
     }
     display(){
