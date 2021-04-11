@@ -7,6 +7,7 @@ const Body = Matter.Body;
 var hammer;
 var ground;
 var stone;
+var rubber;
 
 function preload(){	
 }
@@ -18,10 +19,10 @@ function setup() {
     
     
 	//Create the Bodies Here.
-    hammer = new Hammer(400,200,100,40,PI/2);
+    hammer = new Hammer(400,200,100,40,PI/7);
     ground = new Ground(400,700,800,40);
-    stone = new Stone(300,600,80,80,PI/2);
-
+    stone = new Stone(400,500,80,80,PI/7);
+    rubber = new Rubber(200,30050,50);
 	  Engine.run(engine);
     
 }
@@ -31,8 +32,8 @@ function draw() {
   background("lightBlue");
   Engine.update(engine);
 
-  console.log(stone.body.position.x);
-  console.log(stone.body.position.y);
+  // console.log(rubber.body.position.x);
+  // console.log(rubber.body.position.y);
 
   hammer.display();
   ground.display();

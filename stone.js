@@ -1,7 +1,7 @@
 class Stone{
     constructor(x, y, width, height, angle) {
         var options = {
-            'restitution':0.8,
+            'restitution':1,
             'friction':1.0,
             'density':1.0
         }
@@ -18,7 +18,7 @@ class Stone{
         rotate(angle);
         rectMode(CENTER);
         fill("brown");
-        rect(this.body.position.x,this.body.position.y, this.width, this.height);
+        rect(0,0, this.width, this.height);
         pop();
       }
 };
