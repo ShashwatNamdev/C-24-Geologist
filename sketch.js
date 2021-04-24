@@ -22,7 +22,7 @@ function setup() {
     hammer = new Hammer(400,200,100,40,PI/7);
     ground = new Ground(400,700,800,40);
     stone = new Stone(400,500,80,80,PI/7);
-    rubber = new Rubber(200,30050,50);
+    rubber = new Rubber(200,300,50);
 	  Engine.run(engine);
     
 }
@@ -32,12 +32,13 @@ function draw() {
   background("lightBlue");
   Engine.update(engine);
 
-  // console.log(rubber.body.position.x);
-  // console.log(rubber.body.position.y);
+  // console.log(rubber.x);
+  // console.log(rubber.y);
 
   hammer.display();
   ground.display();
   stone.display();
+  rubber.display();
   
   drawSprites();
 }
