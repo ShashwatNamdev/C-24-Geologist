@@ -9,8 +9,9 @@ class Ground {
       World.add(world, this.body);
     }
     display(){
+      var pos =this.body.position;
       rectMode(CENTER);
       fill("brown");
-      rect(this.body.position.x, this.body.position.y, this.width, this.height);
+      rect(pos.x, pos.y, this.width, this.height);
     }
   };

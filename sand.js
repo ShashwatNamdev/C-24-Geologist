@@ -1,7 +1,7 @@
-class Rubber{
+class Sand{
 	constructor(x,y,r){
 		var options={
-		    restitution:0.3,
+			restitution:0.3,
 			friction:5,
 			density:1
 		}
@@ -13,14 +13,15 @@ class Rubber{
 
 	}
 	display(){
-		var rubberpos=this.body.position;		
+		var sandpos=this.body.position;		
 		push()
-		translate(rubberpos.x, rubberpos.y);
+		translate(sandpos.x, sandpos.y);
 		rectMode(CENTER)
 		strokeWeight(4);
 		stroke("black");
-		fill("darkblue");
+		fill("red");
 		ellipse(0,0,this.r, this.r);
-		pop()
+		pop()	
 	}
+
 };

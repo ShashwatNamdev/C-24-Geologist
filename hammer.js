@@ -1,25 +1,29 @@
-class Hammer{
-    constructor(x,y,width,height,angle){
-        var options = {
-            'restitution':0.5,
-            'friction':1.0,
-            'density':0.4,
-        }
-        this.body = Bodies.rectangle(x, y, width, height, options);
-        this.width = width;
-        this.height = height;
-        World.add(world, this.body);
+class Hammer {
+    constructor(x, y) {
+      var options = {
+        'density':2,
+        'friction': 1.0,
+        'restitution':0.5
+      }
+      this.body = Bodies.rectangle(x, y, 50, 50, options);
+      this.width = 150;
+      this.height = 40;
+      World.add(world, this.body);
     }
     display(){
-        var angle = this.body.angle;
-        this.body.position.x = mouseX;
-        this.body.position.y = mouseY;
-        push();
-        translate(this.body.position.x, this.body.position.y);
-        rotate(angle);
-        rectMode(CENTER);
-        fill("yellow");
-        rect(0, 0, this.width, this.height);
-        pop();
+      var pos = this.body.position;
+      pos.x = mouseX;
+      pos.y = mouseY;
+      var angle = this.body.angle;
+  
+      push();
+      translate(pos.x, pos.y);
+      rotate(angle);
+      strokeWeight(3);
+      stroke('white')
+      fill('orange')
+      rectMode(CENTER)
+      rect(0, 0, this.width, this.height);
+      pop();
     }
-}
+  };
